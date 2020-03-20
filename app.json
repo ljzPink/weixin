@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/poem/poem"
+    "pages/poem/poem",
+    "pages/map/map"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -11,5 +12,36 @@
     "navigationBarTextStyle": "black"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "subway": {
+      "version": "1.0.4",
+      "provider": "wx6aaf93c4435fa1c1"
+    }
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "tabBar": {
+    "color": "#ccc",
+    "selectedColor": "#35495e",
+    "borderStyle": "white",
+    "backgroundColor": "#f9f9f9",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "地图",
+        "pagePath": "pages/map/map"
+      },
+      {
+        "text": "诗词",
+        "pagePath": "pages/poem/poem"
+      }
+    ]
+  }
 }

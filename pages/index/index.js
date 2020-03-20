@@ -17,11 +17,12 @@ Page({
   },
   bindPoemTap: function () {
     wx.navigateTo({
-      url: '../poem/poem'
+      url: '../map/map'
     })
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
+      console.log(app.globalData)
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true

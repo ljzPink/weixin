@@ -6,27 +6,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    returnData:[],
+    searchVal:''
   },
-
+ 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this;
     wx.request({
-      url: 'http://111.231.93.35/test',
-      method: 'GET',
+      url: 'http://localhost/xiaochengxu/getPoemList',
+      method: 'POST',
+      data: { "pageNO": 1, pageSize: 20 },
       header: {
         'content-type': 'application/json' //默认值
       },
       success: function (res) {
-        console.log(res.data);
+        console.log(res.data.data.data);
+        that.setData({
+          returnData: res.data.data.data,
+        })
       },
       fail: function (res) {
         console.log("失败");
       }
-      
+
     })
+    
   },
 
   /**
@@ -76,5 +83,17 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  /**
+   * 搜索时触发
+   */
+  query:function(e){
+    console.log(e.detail.value);
+  },
+  /**
+   * 根据id查询
+   */
+  getPoemById:function(e){
+    console.log(e);
   }
 })

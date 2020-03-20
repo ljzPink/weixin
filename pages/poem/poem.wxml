@@ -1,2 +1,9 @@
-<!--pages/poem/poem.wxml-->
-<text>pages/poem/poem.wxml</text>
+
+<view class='search'>
+  <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{searchVal}}" bindinput='inputBind 'bindconfirm='query'></input> 
+</view>
+
+<view class="poemList" wx:for="{{returnData}}" wx:for-item="item" wx:key="index" >
+  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="getPoemById" hover-class="other-button-hover"> {{item.title}}</button>
+</view>
