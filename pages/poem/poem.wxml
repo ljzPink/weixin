@@ -3,7 +3,13 @@
   <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{searchVal}}" bindinput='inputBind 'bindconfirm='query'></input> 
 </view>
 
-<view class="poemList" wx:for="{{returnData}}" wx:for-item="item" wx:key="index" >
-  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="getPoemById" hover-class="other-button-hover"> {{item.title}}</button>
+<view wx:if="{{view == 'list'}}" class="poemList" wx:for="{{returnData}}" wx:for-item="item" wx:key="index" >
+  <label id= "{{item.id}}" bindtouchstart="getPoemById">
+    {{item.title}}
+  </label>
+</view>
+<view wx:if="{{view == 'detail'}}" class="detail" >
+  <view class="title"> {{returnData.title}}</view>
+  <view class="author" > {{returnData.category}} {{returnData.dynasty}}.{{returnData.author}}</view>
+  <view class="contents"  wx:for="{{contents}}" wx:for-item="item" wx:key="index" ><view wx:if="{{item != ''}}">{{item}}。</view> </view>
 </view>

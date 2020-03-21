@@ -1,18 +1,19 @@
 /* pages/poem/poem.wxss */
 page{
-
+background-color: #E8D098
   
 }
 /* 搜索框样式 */
 .search
 {
+  padding-left:30rpx;
   display: flex;
   flex-direction: row;
   justify-content:space-between;
   align-items: center;
-  width:100%;
+  width:90%;
   height:80rpx;
-  background-color:whitesmoke;
+  background-color:rgb(250, 243, 226);
   margin-top: 5%;
   border:1rpx solid whitesmoke;
   border-radius: 5rpx;
@@ -34,6 +35,22 @@ page{
   height:40rpx;
   padding-right:20rpx;
 }
-.button{
+.buttonlist{
   width: 300rpx
+}
+.poemList label{
+  padding-left: 50rpx;
+  color: white
+
+}
+.detail .title{
+  text-align: center;   /** 水平居中 **/
+}
+.detail .author{
+  padding-right: 50rpx;
+  text-align: right;   /** 水平居中 **/
+}
+.detail .contents{
+  padding-left: 50rpx;
+  text-align: left;   /** 水平居中 **/
 }

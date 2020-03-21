@@ -7,7 +7,10 @@ Page({
    */
   data: {
     returnData:[],
-    searchVal:''
+    searchVal:'',
+    defaultSize:'defaultSize',
+    view: 'list',
+    contents:[]
   },
  
   /**
@@ -18,14 +21,14 @@ Page({
     wx.request({
       url: 'http://localhost/xiaochengxu/getPoemList',
       method: 'POST',
-      data: { "pageNO": 1, pageSize: 20 },
+      data: { "pageNO": 1, pageSize: 30 },
       header: {
         'content-type': 'application/json' //默认值
       },
       success: function (res) {
-        console.log(res.data.data.data);
         that.setData({
           returnData: res.data.data.data,
+          view: 'list'
         })
       },
       fail: function (res) {
@@ -94,6 +97,30 @@ Page({
    * 根据id查询
    */
   getPoemById:function(e){
-    console.log(e);
+    let that = this;
+    wx.request({
+      url: 'http://localhost/xiaochengxu/getPoemById',
+      method: 'POST',
+      data: { 'id': 65},
+      header: {
+        'content-type': 'application/json' //默认值
+      },
+      success: function (res) {
+        console.log(res.data.data.content);
+        console.log(res.data.data.content.split("。"));
+        that.setData({
+          returnData: res.data.data,
+          view: 'detail',
+          contents: res.data.data.content.split("。")
+        })
+      },
+      fail: function (res) {
+        console.log("失败");
+      }
+
+    })
+  },
+  query:function(e){
+    
   }
 })
