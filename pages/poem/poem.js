@@ -1,5 +1,6 @@
 // pages/poem/poem.js
 const app = getApp()
+const util = require('../../utils/util.js')
 Page({
 
   /**
@@ -10,33 +11,18 @@ Page({
     searchVal:'',
     defaultSize:'defaultSize',
     view: 'list',
-    contents:[]
+    contents:[],
+    pageNo:0,
+    pageSize: 25,
+    pages:1
+
   },
  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
-    wx.request({
-      url: 'http://localhost/xiaochengxu/getPoemList',
-      method: 'POST',
-      data: { "pageNO": 1, pageSize: 30 },
-      header: {
-        'content-type': 'application/json' //默认值
-      },
-      success: function (res) {
-        that.setData({
-          returnData: res.data.data.data,
-          view: 'list'
-        })
-      },
-      fail: function (res) {
-        console.log("失败");
-      }
-
-    })
-    
+      this.lower();
   },
 
   /**
@@ -64,7 +50,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    lower();
   },
 
   /**
@@ -98,29 +84,44 @@ Page({
    */
   getPoemById:function(e){
     let that = this;
-    wx.request({
-      url: 'http://localhost/xiaochengxu/getPoemById',
-      method: 'POST',
-      data: { 'id': 65},
-      header: {
-        'content-type': 'application/json' //默认值
-      },
-      success: function (res) {
-        console.log(res.data.data.content);
-        console.log(res.data.data.content.split("。"));
-        that.setData({
-          returnData: res.data.data,
-          view: 'detail',
-          contents: res.data.data.content.split("。")
-        })
-      },
-      fail: function (res) {
-        console.log("失败");
-      }
-
+    util.sendAjax("xiaochengxu/getPoemById", "POST", { 'id': e.target.id }).then((data)=>{
+      that.setData({
+        returnData: data.data.data,
+        view: 'detail',
+        contents: data.data.data.content.split("。")
+      })
     })
+    
   },
   query:function(e){
     
+  },
+  returnList:function(){
+    this.onLoad();
+  },
+  lower(){
+    let that = this;
+    if(that.data.pageNo == that.data.pages){
+      wx.showToast({
+        title: '没有更多了',
+      })
+      return;
+    }
+    console.log();
+    var para = {
+      'pageNo': that.data.pageNo+1,
+      'pageSize': that.data.pageSize
+    }
+
+    util.sendAjax("xiaochengxu/getPoemList", "POST", para).then((data) => {
+      that.setData({
+        returnData: data.data.data.data,
+        view: 'list',
+        pageNo: data.data.data.pageNo,
+        pageSize: data.data.data.pageSize,
+        pages: data.data.data.pages
+        
+      })
+    })
   }
 })

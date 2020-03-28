@@ -35,9 +35,7 @@ background-color: #E8D098
   height:40rpx;
   padding-right:20rpx;
 }
-.buttonlist{
-  width: 300rpx
-}
+
 .poemList label{
   padding-left: 50rpx;
   color: white
@@ -53,4 +51,15 @@ background-color: #E8D098
 .detail .contents{
   padding-left: 50rpx;
   text-align: left;   /** 水平居中 **/
+}
+.retuenbtn{
+  background: rgb(235, 220, 10);
+  padding-right: 20rpx;
+ 
+}
+.hedaer{
+  display: flex;
+}
+.header_left{
+  width: 80%;
 }
