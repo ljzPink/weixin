@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/poem/poem",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/news/news",
+    "pages/out/out"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -37,6 +39,10 @@
       {
         "text": "地图",
         "pagePath": "pages/map/map"
+      },
+      {
+        "text": "新闻",
+        "pagePath": "pages/news/news"
       },
       {
         "text": "诗词",

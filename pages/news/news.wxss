@@ -1,0 +1,9 @@
+/* pages/news/news.wxss */
+page{
+background-color: #E8D098
+  
+}
+.poemList label{
+  padding-left: 50rpx;
+  color: white
+}

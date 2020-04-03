@@ -15,7 +15,7 @@ const formatNumber = n => {
 }
 const sendAjax = (url, type, para)=>{
   return new Promise((resolve, reject) => {
-    var baseUrl = "http://localhost/";
+    var baseUrl = "http://zhonggg.com/";
     wx.request({
       url: baseUrl + url,
       method: type,
