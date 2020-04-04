@@ -97,6 +97,7 @@ Page({
     
   },
   returnList:function(){
+    this.data.returnData = [];
     this.onLoad();
   },
   lower(){

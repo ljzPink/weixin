@@ -5,11 +5,12 @@
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  
+    </block>S
+  </view> 
   <view class="usermotto " bindtap="bindPoemTap">
-    <text class="user-motto">{{motto}}</text>
-    
+    <text class="user-motto">{{motto}}</text> 
   </view>
 </view>
+
+
+
