@@ -1,7 +1,7 @@
 /* pages/poem/poem.wxss */
 page{
-background-color: #E8D098
-  
+  background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/poembg.jpg);
+  color: white
 }
 /* 搜索框样式 */
 .search
@@ -13,7 +13,7 @@ background-color: #E8D098
   align-items: center;
   width:90%;
   height:80rpx;
-  background-color:rgb(250, 243, 226);
+  /* background-color:rgb(250, 243, 226);*/
   margin-top: 5%;
   border:1rpx solid whitesmoke;
   border-radius: 5rpx;
@@ -53,8 +53,9 @@ background-color: #E8D098
   text-align: left;   /** 水平居中 **/
 }
 .retuenbtn{
-  background: rgb(235, 220, 10);
+  background-color: transparent; 
   padding-right: 20rpx;
+  color: white
  
 }
 .hedaer{

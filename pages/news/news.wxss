@@ -1,6 +1,7 @@
 /* pages/news/news.wxss */
 page{
-background-color: #E8D098
+/* background-color: #E8D098*/
+background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/newsbg.jpg);
   
 }
 .poemList label{

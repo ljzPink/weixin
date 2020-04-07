@@ -17,7 +17,7 @@
   "sitemapLocation": "sitemap.json",
   "plugins": {
     "subway": {
-      "version": "1.0.4",
+      "version": "1.0.9",
       "provider": "wx6aaf93c4435fa1c1"
     }
   },
@@ -27,17 +27,17 @@
     }
   },
   "tabBar": {
-    "color": "#ccc",
-    "selectedColor": "#35495e",
+    "color": "#35495e",
+    "selectedColor": "#ccc",
     "borderStyle": "white",
-    "backgroundColor": "#f9f9f9",
+    "backgroundColor": "#141415",
     "list": [
       {
         "text": "首页",
         "pagePath": "pages/index/index"
       },
       {
-        "text": "地图",
+        "text": "位置",
         "pagePath": "pages/map/map"
       },
       {

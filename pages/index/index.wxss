@@ -1,6 +1,6 @@
 /**index.wxss**/
 page{
-  
+  background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/bg1.jpg);
 }
 .userinfo {
   display: flex;

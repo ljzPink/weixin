@@ -6,7 +6,14 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    wx.getSystemInfo({
+      success: res => {
+        //导航高度
+        this.globalData.navHeight = res.statusBarHeight ;
+      }, fail(err) {
+        console.log(err);
+      }
+    })
     // 登录
     wx.login({
       success: res => {
@@ -36,7 +43,8 @@ App({
   },
   globalData: {
     userInfo: null,
-    outurl:null
+    outurl:null,
+    navHeight: 0
   },
   
 })

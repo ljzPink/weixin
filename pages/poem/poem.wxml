@@ -1,10 +1,12 @@
 
 <view class='search' wx:if="{{view == 'list'}}">
-  <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{searchVal}}" bindinput='inputBind 'bindconfirm='query'></input> 
+<input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{searchVal}}" bindinput='inputBind 'bindconfirm='query'></input> 
+  
 </view>
 <view class="hedaer" wx:if="{{view == 'detail'}}">
-  <view class="header_left"></view><button  wx:if="{{view == 'detail'}}" size="mini" bindtap="returnList" class="retuenbtn">←</button>
+  <view class="header_left"></view><button  wx:if="{{view == 'detail'}}" size="mini" bindtap="returnList" class="retuenbtn">返回</button>
 </view>
+
 <scroll-view wx:if="{{view == 'list'}}" scroll-y='true' style="height:400px" bindscrolltolower='lower'  >
   <view  class="poemList" wx:for="{{returnData}}" wx:for-item="item" wx:key="index" >
     <label id= "{{item.id}}" bindtouchstart="getPoemById">
