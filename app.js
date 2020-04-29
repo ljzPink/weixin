@@ -8,8 +8,9 @@ App({
     wx.setStorageSync('logs', logs)
     wx.getSystemInfo({
       success: res => {
-        //导航高度
-        this.globalData.navHeight = res.statusBarHeight ;
+        //客户端长宽
+        this.globalData.windowHeight = res.windowHeight ;
+        this.globalData.windowWidth = res.windowWidth;
       }, fail(err) {
         console.log(err);
       }
@@ -44,7 +45,8 @@ App({
   globalData: {
     userInfo: null,
     outurl:null,
-    navHeight: 0
+    windowHeight: 0,
+    windowWidth: 0
   },
   
 })

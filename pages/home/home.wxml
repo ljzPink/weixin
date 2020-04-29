@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+     <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> 
+  <view class="usermotto " bindtap="bindPoemTap">
+    <text class="user-motto">{{motto}}</text> 
+  </view>
+</view>
+<!--<view class="page__bd">
+  <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell ">
+            <view class="weui-cell__hd">
+                <view class="weui-label">姓名</view>
+            </view>
+            <view class="weui-cell__bd">
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </view>
+        </view>
+        <view class="weui-cell ">
+            <view class="weui-cell__hd">
+                <view class="weui-label">性别</view>
+            </view>
+            <view class="weui-cell__bd">
+                <text class="userinfo-nickname">{{userInfo.gender}}</text>
+            </view>
+        </view>
+        
+    </view>
+    </block> 
+</view> -->
+
+ 
+
+
+

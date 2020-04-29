@@ -1,0 +1,20 @@
+<!--list.wxml-->
+<view wx:for="{{returnData}}" wx:for-item="music"  wx:key="index"  hover-class="weui-cell_active" style="background-image:url({{music.isPlay?bkimg1:null}})">
+    <view class = "music_item" >
+      <view class = "music_item_left" style="background-image:url({{music.pic}})">
+         <image src ="{{music.pic}}"></image>
+      </view>
+      
+      <view  class = "music_item_centre">
+        <view class="music_name">
+         {{music.name}}
+        </view>
+        <view class="music_author">
+         {{music.author}}
+        </view>
+      </view>
+      <view class="music_item_right" id = "{{index}}" bindtouchstart = "startOrStop">
+       <image src = "{{music.isPlay?pauseIcon:startIcon}}"></image>
+      </view>
+    </view>
+</view>

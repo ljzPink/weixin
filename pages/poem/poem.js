@@ -14,7 +14,8 @@ Page({
     contents:[],
     pageNo:0,
     pageSize: 25,
-    pages:1
+    pages:1,
+    windowHeight: app.globalData.windowHeight
 
   },
  

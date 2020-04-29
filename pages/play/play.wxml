@@ -1,0 +1,43 @@
+<!--play.wxml-->
+<view class="page">
+  <view class="page__hd" >
+    <text></text>
+    <text style="color:#0e9630;font-size:20px">{{playdata.name}}</text>
+    <text style="color:grey;font-size:12px">{{playdata.singer}}</text>
+  </view>
+  <view class="page__bd" animation="{{ani}}">
+    <view class="box" bindtap="down">
+      <view class="cd" style="transform: rotate({{angle}}deg);">
+        <image class="pic" src="{{playdata.pic}}" mode="aspectFill"></image>
+      </view>
+    </view>
+    <view class="lrc"  bindtap="up">
+      <view class="paper">
+        <scroll-view scroll-y="true" scroll-with-animation='true' scroll-top='{{marginTop}}' style="height:{{lrcH}}px">
+          <view class='contentText'>
+            <block wx:for='{{lrc}}'>
+              <text class="{{lrcRow == index ? 'currentTime' : ''}}">{{item[1]}}</text>
+            </block>
+          </view>
+        </scroll-view>>
+      </view>
+    </view>
+  </view>
+  <view class="page__ft">
+    <view class="playBtns">
+      <view class="slider">
+        <text class="time">{{timeNow/60 | Int}}:{{timeNow%60<10 ? "0" + (timeNow%60 | Int) : timeNow%60 | Int}}</text>
+        <slider min="0" max="{{timeAll}}" value="{{timeNow | Int}}" class="sli" bindchanging="touchSli" bindchange="playHere" block-color="{{blockColor}}" activeColor="#f4ea2a" />
+        <text class="time">{{timeAll/60 | Int}}:{{timeAll%60<=9? "0"+timeAll%60 : timeAll%60}}</text>
+      </view>
+      <view class="btns">
+        <image class="preBtn" bindtouchstart="touchPreBtn" bindtouchend="pre"  mode="aspectFit">⋘</image>
+        <image class="playBtn" bindtouchstart="touchPlayBtn" bindtouchend="playOrpause" mode="aspectFit"></image>
+        <image class="nextBtn" bindtouchstart="touchNextBtn" bindtouchend="next" mode="aspectFit">⋙</image>
+      </view>
+    </view>
+    <view class="ft">
+      <text>APP From Hanana</text>
+    </view>
+  </view>
+</view>

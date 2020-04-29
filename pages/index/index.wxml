@@ -1,16 +1,44 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view> 
-  <view class="usermotto " bindtap="bindPoemTap">
-    <text class="user-motto">{{motto}}</text> 
+<view style="display:flex; flex-direction:column; height:{{windowHeight*0.95}}px">
+  <view class='flex_item_search '>
+    <input class="search" type='text' placeholder='搜索' confirm-type='search' value="{{searchVal}}" bindinput='inputBind     ' bindconfirm='query'></input>
+  </view>
+  <view class='flex_item_ads  '>
+    <view class = "ads_header " >
+     小游戏|广告
+    </view>
+    <view class="ads_content">
+     <image class="ads_content-avatar" src="https://www.zhonggg.com/staticFile//xiaochengxu/img/timg.jpg" mode="cover"></image>
+     <image class="ads_content-avatar" src="https://www.zhonggg.com/staticFile//xiaochengxu/img/timg.jpg" mode="cover"></image>
+     <image class="ads_content-avatar" src="https://www.zhonggg.com/staticFile//xiaochengxu/img/timg.jpg" mode="cover"></image>
+     <image class="ads_content-avatar" src="https://www.zhonggg.com/staticFile//xiaochengxu/img/timg.jpg" mode="cover"></image>
+     <image class="ads_content-avatar" src="https://www.zhonggg.com/staticFile//xiaochengxu/img/timg.jpg" mode="cover"></image>
+     <image class="ads_content-avatar" src="https://www.zhonggg.com/staticFile//xiaochengxu/img/timg.jpg" mode="cover"></image>
+    </view>
+  </view>
+  <view class='flex_item_title'>
+  <view class = "title_4 new ">
+     <font>最新面试题</font>
+     <image class = "title_icon" src = "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/new.png"></image>
+  </view>
+  <view class = "title_4 new ">
+     <font>热门面试题</font>
+     <image class = "title_icon" src = "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/火.png"></image>
+  </view>
+  <view class = "title_4 new ">
+     <font>最新面试题</font>
+     <image class = "title_icon" src = "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/new.png"></image>
+  </view>
+  <view class = "title_4 new ">
+     <font>推荐阅读</font>
+     <image class = "title_icon" src = "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/tuijian.png"></image>
+  </view>
+
+  </view>
+  <view class='flex_item_content '>
+    <view class = "content_detail " wx:for="{{contentTbas}}" wx:for-item="item" wx:key="index">
+      <image class = "title_icon" src = "{{item.iconSrc}}"></image>
+      <font>{{item.text}}</font>
+    </view>
   </view>
 </view>
-
-
-

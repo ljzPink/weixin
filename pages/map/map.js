@@ -8,28 +8,34 @@ Page({
   data: {
     longitude: 121.38206,
     latitude: 31.11325,
-    navH:46,
+    windowHeight: app.globalData.windowHeight,
+    markers:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      navH: app.globalData.navHeight
-    })
+   
     let that = this;
     wx.getLocation({
       success: function(res) {
         console.log(res);
         that.setData({
           longitude: res.longitude,
-          latitude: res.latitude
-
+          latitude: res.latitude,
+          markers:[{
+            latitude: res.latitude,     
+            longitude: res.longitude, 
+            iconPath: app.globalData.userInfo.avatarUrl,
+            width: 128,
+            height: 128
+            
+          }]
         })
       },
     })
-    
+
 
   },
 

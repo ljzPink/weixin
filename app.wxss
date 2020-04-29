@@ -1,5 +1,5 @@
 /**app.wxss**/
-@import '/style/weui.wxss';
+@import "/style/weui.wxss";
 .container {
   height: 100%;
   display: flex;
@@ -18,4 +18,39 @@
   font-size:28rpx; 
 color:#fff;
   background-size: 100% 100%;
+}
+.footer
+{
+  position:fixed;  
+  bottom:0px;  
+  width: 100%;
+  font-size:27rpx;
+  color: grey;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+
+}
+/* 搜索框样式 */
+.search
+{
+  padding-left:30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  width:90%;
+  height:80rpx;
+  /* background-color:rgb(250, 243, 226);*/
+  margin-top: 5%;
+  border:1rpx solid whitesmoke;
+  border-radius: 5rpx;
+
+}
+
+/* 搜索框提示文字样式 */
+.search input
+{
+  font-size:27rpx;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left:30rpx; 
 }

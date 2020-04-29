@@ -1,23 +1,29 @@
 
-<view class='search' wx:if="{{view == 'list'}}">
-<input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{searchVal}}" bindinput='inputBind 'bindconfirm='query'></input> 
-  
-</view>
-<view class="hedaer" wx:if="{{view == 'detail'}}">
-  <view class="header_left"></view><button  wx:if="{{view == 'detail'}}" size="mini" bindtap="returnList" class="retuenbtn">返回</button>
-</view>
-
-<scroll-view wx:if="{{view == 'list'}}" scroll-y='true' style="height:400px" bindscrolltolower='lower'  >
-  <view  class="poemList" wx:for="{{returnData}}" wx:for-item="item" wx:key="index" >
-    <label id= "{{item.id}}" bindtouchstart="getPoemById">
-      {{item.title}}
-    </label>
+<view style="height:{{windowHeight}}">
+  <view class='search' wx:if="{{view == 'list'}}">
+    <input type='text' placeholder='输入你想要的内容' confirm-type='search' value="{{searchVal}}" bindinput='inputBind 'bindconfirm='query'></input> 
   </view>
-</scroll-view>
 
-<view wx:if="{{view == 'detail'}}" class="detail" >
-  <view class="title"> {{returnData.title}}</view>
-  <view class="author" > {{returnData.category}} {{returnData.dynasty}}.{{returnData.author}}</view>
-  <view class="contents"  wx:for="{{contents}}" wx:for-item="item" wx:key="index" ><view wx:if="{{item != ''}}">{{item}}。</view> </view>
+  <view class="hedaer" wx:if="{{view == 'detail'}}">
+    <view class="header_left"></view><button  wx:if="{{view == 'detail'}}" size="mini" bindtap="returnList" class="retuenbtn">返回</button>
+  </view>
+
+  <scroll-view wx:if="{{view == 'list'}}" scroll-y='true' style="height:{{windowHeight-100}}px" bindscrolltolower='lower'  >
+    <view  class="poemList" wx:for="{{returnData}}" wx:for-item="item" wx:key="index" >
+      <label id= "{{item.id}}" bindtouchstart="getPoemById">
+        {{item.title}}
+      </label>
+    </view>
+  </scroll-view>
+
+  <view wx:if="{{view == 'detail'}}" class="detail" >
+    <view class="title"> {{returnData.title}}</view>
+    <view class="author" > {{returnData.category}} {{returnData.dynasty}}.{{returnData.author}}</view>
+    <view class="contents"  wx:for="{{contents}}" wx:for-item="item" wx:key="index" ><view wx:if="{{item != ''}}">{{item}}。</view> </view>
+  </view>
+  <view class="footer">
+    @数据来源于网络
+  </view>
 </view>
+
 

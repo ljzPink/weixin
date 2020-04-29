@@ -3,8 +3,10 @@
 id="map"
 longitude="{{longitude}}"
 latitude="{{latitude}}"
-controls="{{controls}}" bindcontroltap="controltap" 
+markers="{{markers}}"
+controls="{{controls}}" bindcontroltap="controltap"
+subkey="O4QBZ-FLUCD-R7L4I-PGJ5J-NPOM2-BGFVZ"
 scale="18"
 show-location
-style="width: 100%; height:calc(100vh - {{navH}}px)"></map>
+style="width: 100%;height:{{windowHeight}}px"></map>
 

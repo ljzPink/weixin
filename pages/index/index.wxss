@@ -1,25 +1,86 @@
 /**index.wxss**/
-page{
-  background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/bg1.jpg);
+
+page {
+  background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/indexbg1.gif);
+  color: whitesmoke;
+  
 }
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.viewWithborder{
+  border-width:medium;
+  border-color:grey
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
+.flex_item_search {
+  height: 15%;
+  
+}
+
+.flex_item_ads {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ads_header {
+  height: 30%;
+  font-family: NSimSun;
+  color: #b2b2b2d2;
+  font-size: 11px;
+
+}
+.ads_content-avatar{
+  width: 10%;
+  height: 100%;
   margin: 20rpx;
   border-radius: 50%;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.flex_item_title {
+  height: 15%;
+  display:flex; 
+  flex-direction:row;
+}
+.title_3{
+  height: 100%;
+  width: 33%;
+  color: whitesmoke;
+  font-size: 12px;
+  text-align: center
+}
+.title_4{
+  height: 100%;
+  width: 25%;
+  color: whitesmoke;
+  font-size: 12px;
+  text-align: center
+}
+.title_icon{
+  height: 50%;
+  width: 50%;
+}
+.flex_item_content {
+  height: 55%;
+  text-align: center;
+  font-size: 10px;
+  display:flex; 
+  flex-direction: row;
+  flex-wrap:wrap;
 }
 
-.usermotto {
-  margin-top: 200px;
-  color: whitesmoke
+.green {
+  background-color: #0f0;
+}
+
+.red {
+  background-color: #f00;
+}
+
+.blue {
+  background-color: #00f;
+}
+.content_detail{
+  width: 70px;
+  height:70px;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
 }
