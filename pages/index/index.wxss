@@ -3,7 +3,6 @@
 page {
   background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/indexbg1.gif);
   color: whitesmoke;
-  
 }
 .viewWithborder{
   border-width:medium;
@@ -66,17 +65,7 @@ page {
   flex-wrap:wrap;
 }
 
-.green {
-  background-color: #0f0;
-}
 
-.red {
-  background-color: #f00;
-}
-
-.blue {
-  background-color: #00f;
-}
 .content_detail{
   width: 70px;
   height:70px;

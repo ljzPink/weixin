@@ -1,0 +1,33 @@
+/* pages/userInfo/userInfo.wxss */
+page {
+ background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/pugongying.jpg);
+  color: whitesmoke;
+  
+}
+.headerPart{
+  height: 10%
+}
+.uppart{
+  height: 30%
+}
+.downpart{
+  height: 40%
+}
+.midpart{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  height: 30%
+}
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}

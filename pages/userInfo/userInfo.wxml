@@ -1,0 +1,23 @@
+<view style="display:flex; flex-direction:column; height:{{windowHeight*0.95}}px">
+<view class="headerPart"> </view>
+  <view class="uppart">
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+  </view>
+  <view class="midpart ">
+    <view>国籍：{{userInfo.country}}</view>
+    <view>性别：{{userInfo.gender ==1?"男":"女"}}</view>
+    <view> 语言：{{userInfo.language}}</view>
+  </view>
+  <view class="downpart ">
+    <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" controls="{{controls}}" bindcontroltap="controltap" subkey="O4QBZ-FLUCD-R7L4I-PGJ5J-NPOM2-BGFVZ" scale="18" show-location style="width: 100%;height:100%"></map>
+  </view>
+  <!-- <view class="footer">
+    @数据来源于网络
+  </view> -->
+</view>

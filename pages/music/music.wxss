@@ -1,6 +1,6 @@
 /* pages/music/music.wxss */
 page{
-  background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/timg.jpg);
+  background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/pugongying.jpg);
 }
 .myaudio{
   background-color:rgba(0,0,0,1)

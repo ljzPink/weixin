@@ -20,16 +20,18 @@ Page({
     pauseIcon: "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/pause.png",
     startIcon: "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/start.png",
     onloadIndex: -1,
-    onloadFlag: false
+    onloadFlag: false,
+    bkimg1: "https://www.zhonggg.com/staticFile//xiaochengxu/img/tree.jpg",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    innerAudioContext.loop = true;
     var para = {
       'pageNo': 1,
-      'pageSize': 10
+      'pageSize': 30
     }
     let that = this;
     util.sendAjax("xiaochengxu/getSongs", "POST", para).then((data) => {
@@ -40,9 +42,8 @@ Page({
         view: 'list',
         pageNo: data.data.data.pageNo,
         pageSize: data.data.data.pageSize,
-        pages: data.data.data.pages,
-        bkimg1: "https://www.zhonggg.com/staticFile//xiaochengxu/img/indexbg1.gif",
-        bkimg0: "https://www.zhonggg.com/staticFile//xiaochengxu/img/poembg.jpg"
+        pages: data.data.data.pages
+       
 
       })
     })
@@ -75,7 +76,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-
+    innerAudioContext.destroy();
   },
 
   /**
@@ -125,6 +126,7 @@ Page({
         that.data.returnData[that.data.onloadIndex].isPlay = false;
       }
       innerAudioContext.src = that.data.returnData[e.currentTarget.id].url;
+      console.log("duration" + innerAudioContext.duration);
       innerAudioContext.play();
       that.data.returnData[e.currentTarget.id].isPlay = true;
       console.log("开始播放");

@@ -1,0 +1,10 @@
+<!--pages/tools/tools.wxml-->
+<!--index.wxml-->
+<view style="display:flex; flex-direction:column; height:{{windowHeight*0.95}}px">
+  <view class='flex_item_content '>
+    <view class = "content_detail " wx:for="{{contentTbas}}" wx:for-item="item" wx:key="index"  id = "{{index}}" bindtouchstart = "intopart">
+      <image class = "title_icon" src = "{{item.iconSrc}}"></image>
+      <font>{{item.text}}</font>
+    </view>
+  </view>
+</view>

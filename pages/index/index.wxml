@@ -17,11 +17,11 @@
     </view>
   </view>
   <view class='flex_item_title'>
-  <view class = "title_4 new ">
+  <view class = "title_4 new " id = "newPart" bindtouchstart = "intopart">
      <font>最新面试题</font>
      <image class = "title_icon" src = "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/new.png"></image>
   </view>
-  <view class = "title_4 new ">
+  <view class = "title_4 new " id = "hotPart" bindtouchstart = "intopart">
      <font>热门面试题</font>
      <image class = "title_icon" src = "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/火.png"></image>
   </view>
@@ -29,14 +29,14 @@
      <font>最新面试题</font>
      <image class = "title_icon" src = "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/new.png"></image>
   </view>
-  <view class = "title_4 new ">
+  <view class = "title_4 new"  id = "tuijianPart" bindtouchstart = "intopart">
      <font>推荐阅读</font>
      <image class = "title_icon" src = "https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/tuijian.png"></image>
   </view>
 
   </view>
   <view class='flex_item_content '>
-    <view class = "content_detail " wx:for="{{contentTbas}}" wx:for-item="item" wx:key="index">
+    <view class = "content_detail " wx:for="{{contentTbas}}" wx:for-item="item" wx:key="index"  id = "{{index}}" bindtouchstart = "intopart">
       <image class = "title_icon" src = "{{item.iconSrc}}"></image>
       <font>{{item.text}}</font>
     </view>

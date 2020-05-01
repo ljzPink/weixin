@@ -7,7 +7,10 @@
     "pages/news/news",
     "pages/music/music",
     "pages/out/out",
-    "pages/home/home"
+    "pages/home/home",
+    "pages/part/part",
+    "pages/tools/tools",
+    "pages/userInfo/userInfo"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -41,23 +44,22 @@
         "selectedIconPath": "style/icon/shouye1.png" 
       },
       {
-        "text": "音乐",
-        "pagePath": "pages/music/music",
-        "iconPath": "style/icon/music.png",
-        "selectedIconPath": "style/icon/music.png"
+        "text": "工具",
+        "pagePath": "pages/tools/tools",
+        "iconPath": "style/icon/gongju.png",
+        "selectedIconPath": "style/icon/gongju.png"
       },
-      {
-        "text": "位置",
-        "pagePath": "pages/map/map",
-        "iconPath": "style/icon/location.png",
-        "selectedIconPath": "style/icon/location.png"
-      },
-   
       {
         "text": "诗词",
         "pagePath": "pages/poem/poem",
         "iconPath": "style/icon/wenxue.png",
         "selectedIconPath": "style/icon/wenxue.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/userInfo/userInfo",
+        "iconPath": "style/icon/gerenzhongxin.png",
+        "selectedIconPath": "style/icon/gerenzhongxin.png"
       }
     ]
   }
