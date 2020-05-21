@@ -1,2 +1,3 @@
-<!--pages/part/part.wxml-->
-<text>pages/part/part.wxml</text>
+<view style="height:{{windowHeight-300}}">
+ {{title}}
+</view>

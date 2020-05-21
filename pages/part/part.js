@@ -1,18 +1,31 @@
 // pages/part/part.js
+const util = require('../../utils/util.js')
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    windowHeight: app.globalData.windowHeight,
+    title:"详情页面"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options["\"pageInfo\""]);
+    console.log(options);
+    let that = this;
+    console.log(options.pageInfo);
+    if (options.pageInfo == "tuijianPart"){
+      that.setData({
+        title: "每日推荐",
+        
+
+
+      })
+    }
   },
 
   /**

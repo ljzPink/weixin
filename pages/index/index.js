@@ -13,7 +13,7 @@ Page({
   
   onLoad: function () {
     let contentTbas = [];
-    for (var i = 0; i < 30; i++) {
+    for (var i = 0; i < 10; i++) {
       var item = {
         "iconSrc":"https://www.zhonggg.com/staticFile//xiaochengxu/img/icon/shouye.png",
         "text":"模块"+i
@@ -26,6 +26,7 @@ Page({
   },
 
   intopart:function(e){
+    console.log(e.currentTarget.id);
     var json = {
       pageInfo: e.currentTarget.id,
       pageTitle:""

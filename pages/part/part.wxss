@@ -1,1 +1,4 @@
-/* pages/part/part.wxss */
+page {
+  background-image: url(https://www.zhonggg.com/staticFile//xiaochengxu/img/indexbg1.gif);
+  color: whitesmoke;
+}
